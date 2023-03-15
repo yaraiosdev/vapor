@@ -11,17 +11,16 @@ final class Student :Model , Content{
     static let schema = "students"
     @ID (key: .id)
     var id :UUID?
-    @Field(key : "name")
-    var name : String
-    @Field(key : "lastName")
-    var lastName :String
+    @Field(key : "studentName")
+    var studentName : String
+
     init() {
         
     }
-    init(id:UUID? = nil, name:String ,lastName:String ) throws {
+    init(id:UUID? = nil, studentName:String  ) throws {
         self.id = id
-        self.name = name
-        self.lastName = lastName
+        self.studentName = studentName
+      
         
     }
 }

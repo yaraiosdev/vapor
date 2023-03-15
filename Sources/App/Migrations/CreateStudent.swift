@@ -11,8 +11,8 @@ struct CreatStudents :Migration {
     func prepare(on database: FluentKit.Database) -> NIOCore.EventLoopFuture<Void> {
         return database.schema("students")
             .id()
-            .field("name",.string,.required)
-            .field("lastName",.string,.required)
+            .field("studentName",.string,.required)
+      
             .create()
     }
     
