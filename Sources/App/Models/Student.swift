@@ -8,7 +8,7 @@
 import Fluent
 import Vapor
 final class Student :Model , Content{
-    static let schema = "Students"
+    static let schema = "students"
     @ID (key: .id)
     var id :UUID?
     @Field(key : "name")
@@ -25,3 +25,4 @@ final class Student :Model , Content{
         
     }
 }
+// we need to select the type of the database 
