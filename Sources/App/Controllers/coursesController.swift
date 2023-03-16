@@ -7,25 +7,25 @@
 
 import Vapor
 import Fluent
-struct StudenController :RouteCollection {
+struct coursesController :RouteCollection {
     func boot(routes: Vapor.RoutesBuilder) throws {
-        let students = routes.grouped("student")
-        students.get(use :readAll)
-        students.get(":id" , use: read)
-        students.post(use:post)
-        students.delete(":id", use:delete)
-        students.put(use:update)
+        let course = routes.grouped("course")
+        course.get(use :readAll)
+        course.get(":id" , use: read)
+        course.post(use:post)
+        course.delete(":id", use:delete)
+        course.put(use:update)
         
     
         
     }
-    func readAll (req:Request) throws -> EventLoopFuture<[student]>{
-        student.query(on: req.db).all()
+    func readAll (req:Request) throws -> EventLoopFuture<[course]>{
+        course.query(on: req.db).all()
     }
-    func post (req:Request) throws -> EventLoopFuture<student>{
-        let student = try req.content.decode(student.self)
-        return student.create(on: req.db)
-            .map{student}
+    func post (req:Request) throws -> EventLoopFuture<course>{
+        let course = try req.content.decode(course.self)
+        return course.create(on: req.db)
+            .map{course}
         
     }
     
@@ -33,17 +33,17 @@ struct StudenController :RouteCollection {
 //        Instructors.find(req.parameters.get("instructorName"), on: req.db)
 //            .unwrap(or: Abort(.notFound))
 //    }
-    func read(req: Request) throws -> EventLoopFuture<student> {
+    func read(req: Request) throws -> EventLoopFuture<Instructors> {
            guard let id = req.parameters.get("id", as: UUID.self) else {
                throw Abort(.badRequest)
            }
-        return student.find(id, on: req.db).unwrap(or: Abort(.notFound))
+        return Instructors.find(id, on: req.db).unwrap(or: Abort(.notFound))
                     }
     func delete(req: Request) throws -> EventLoopFuture<HTTPStatus> {
         guard let id = req.parameters.get("id", as: UUID.self) else {
             throw Abort(.badRequest)
         }
-        return student.find(id, on: req.db)
+        return Instructors.find(id, on: req.db)
             .unwrap(or: Abort(.notFound))
             .flatMap { $0.delete(on: req.db) }
                         .map { .ok }
@@ -51,16 +51,17 @@ struct StudenController :RouteCollection {
     
     }
     func update (req: Request) throws -> EventLoopFuture<HTTPStatus> {
-        let id = try req.content.decode(student.self)
+        let id = try req.content.decode(course.self)
         
-        return student.find(id.id, on: req.db)
+        return course.find(id.id, on: req.db)
             .unwrap(or: Abort(.notFound))
             .flatMap{
-                $0.studentName = id.studentName
+                $0.courseName = id.courseName
                 return $0.update(on: req.db).transform(to: .ok)
             }
     }
 
     
 }
+
 
