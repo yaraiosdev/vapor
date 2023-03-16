@@ -21,7 +21,7 @@ public func configure(_ app: Application) throws {
 //
 //    app.views.use(.leaf)
         
-    
+    app.migrations.add(CreatInspecture())
     app.migrations.add(CreatStudents())
     try app.autoMigrate().wait()
 
