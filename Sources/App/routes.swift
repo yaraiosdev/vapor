@@ -11,7 +11,7 @@ func routes(_ app: Application) throws {
     }
 
     
-try app.register(collection: StudentController())
+try app.register(collection:StudenController())
 try app.register(collection: inspectorController())
 
     

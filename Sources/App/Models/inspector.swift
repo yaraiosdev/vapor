@@ -13,6 +13,8 @@ final class Instructors :Model , Content{
     var id :UUID?
     @Field(key : "instructorName")
     var instructorName : String
+    @Children (for:\.$instuctor_id)
+    var couresList:[course]
 
     init() {
         
@@ -20,7 +22,7 @@ final class Instructors :Model , Content{
     init(id:UUID? = nil, instructorName:String  ) throws {
         self.id = id
         self.instructorName = instructorName
-      
+       
         
     }
 }
