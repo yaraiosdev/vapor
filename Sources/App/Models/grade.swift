@@ -13,13 +13,19 @@ final class grade :Model , Content{
     var id :UUID?
     @Field(key : "score")
     var score : String
+ @Parent(key: "course_id" )
+   var course_id :course
+    @Parent(key: "student_id" )
+    var student_id : student
 
     init() {
         
     }
-    init(id:UUID? = nil, score:String  ) throws {
+    init(id:UUID? = nil, score:String , student_id:UUID  ,course_Id:UUID) throws {
         self.id = id
         self.score = score
+        self.$course_id.id = course_Id
+        self.$student_id.id = student_id
       
         
     }

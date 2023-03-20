@@ -8,14 +8,16 @@
 import Fluent
 import Vapor
 final class course :Model , Content{
-    static let schema = "course"
+    static let schema = "courses"
     @ID (key: .id)
     var id :UUID?
     @Field(key : "courseName")
     var courseName : String
     @Parent(key: "instuctor_id" )
     var instuctor_id :Instructors
-
+    
+   @Children (for:\.$course_id)
+    var gradeList:[grade]
 
     init() {
         

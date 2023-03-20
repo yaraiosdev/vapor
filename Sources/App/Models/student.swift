@@ -13,6 +13,9 @@ final class student :Model , Content{
     var id :UUID?
     @Field(key : "studentName")
     var studentName : String
+    @Children (for:\.$student_id)
+    var gradeList:[grade]
+    
 
     init() {
         

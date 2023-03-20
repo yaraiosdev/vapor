@@ -23,8 +23,9 @@ public func configure(_ app: Application) throws {
         
     app.migrations.add(CreatInspecture())
     app.migrations.add(CreatStudents())
-    app.migrations.add(CreatStudents())
+    app.migrations.add(CreatGrade())
     app.migrations.add(CreatCourse())
+    app.migrations.add(UpdateGrade())
     try app.autoMigrate().wait()
 
     // register routes
