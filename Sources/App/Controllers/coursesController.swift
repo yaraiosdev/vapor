@@ -19,8 +19,15 @@ struct coursesController :RouteCollection {
     
         
     }
-    func readAll (req:Request) throws -> EventLoopFuture<[course]>{
-        course.query(on: req.db).all()
+    func readAll (req:Request)async throws -> [course]{
+     
+        try await course.query(on: req.db)
+            .with(\.$instuctor_id)
+            .all()
+        
+//        course.query(on: req.db)
+//            //.with(\.$instuctor_id)
+//            .all()
     }
     func post (req:Request) throws -> EventLoopFuture<course>{
         let course = try req.content.decode(course.self)

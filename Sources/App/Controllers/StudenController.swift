@@ -22,6 +22,8 @@ struct StudenController :RouteCollection {
     func readAll (req:Request) throws -> EventLoopFuture<[student]>{
         student.query(on: req.db).all()
     }
+    
+    
     func post (req:Request) throws -> EventLoopFuture<student>{
         let student = try req.content.decode(student.self)
         return student.create(on: req.db)

@@ -21,10 +21,10 @@ final class grade :Model , Content{
     init() {
         
     }
-    init(id:UUID? = nil, score:String , student_id:UUID  ,course_Id:UUID) throws {
+    init(id:UUID? = nil, score:String , student_id:UUID  ,course_id:UUID) throws {
         self.id = id
         self.score = score
-        self.$course_id.id = course_Id
+        self.$course_id.id = course_id
         self.$student_id.id = student_id
       
         
