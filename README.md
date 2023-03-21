@@ -25,13 +25,13 @@
     - [A single item](#a-single-item)
     - [A request without data to return](#a-request-without-data-to-return)
     - [A wrong endpoint](#a-wrong-endpoint)
-    - [A wrong inputs](#a-wrong-inputs)
+    - [A wrong input](#a-wrong-input)
     - [A collection of items](#a-collection-of-items)
 
 
 ## Introduction
-this document will show our grading system api that was build using Vapor web framework along with Fluent ORM framework for Swift.
-we are going to show the stuct of this api and it's endpoint and how exactly to use this api
+This document will show our grading system API built using the Vapor web framework and Fluent ORM framework for Swift.
+We will show the Structure of this API and its endpoints and how exactly to use this API.
 
 # Structure
 ```
@@ -57,7 +57,7 @@ we are going to show the stuct of this api and it's endpoint and how exactly to 
 
 # Endpoints
 
-Endpoints with literal and readable URLs is what makes an API awesome. So to make everything easy and convenient for you, we have specified how you should do it.
+Endpoints with literal and readable URLs are what make an API awesome. To make everything easy and convenient for you, we have specified how you should do it.
 
 ## Anatomy of an endpoint
 
@@ -130,13 +130,13 @@ Now that we’ve learned about the anatomy of our endpoints and the different re
 
 | Method   | URL                                      | Description                              |
 | -------- | ---------------------------------------- | ---------------------------------------- |
-| `GET`    | `/api/Instructor`                        | Retrieve all Instructor.                 |
-| `POST`   | `/api/Instructor`                        | Create a new post.                       |
+| `GET`    | `/api/Instructor`                        | Retrieve all instructors.                 |
+| `POST`   | `/api/Instructor`                        | Create a new Instructor.                       |
 | `GET`    | `/api/Instructor/30`                     | Retrieve instructor with id 30.          |
 | `POST`   | `/api/course `                           | Add a new course  to post #28.           |
 | `GET`    | `/api/grade/getStudent/300` | Retrieve the grades of the student with the id 300    |
 | `DELETE` | `/student/300 | Delete the student with id 300.`                 |
-| `GET`    | `/api/course/getInstrctorCourses/30` | get all the courses that been tought by the instructor  with id 30 |
+| `GET`    | `/api/course/getInstrctorCourses/30` |  Get all the courses that are being taught by the instructor  with id 30 |
 
 
 
@@ -237,7 +237,7 @@ Just to round it all off, here’s a few examples of how our response will retur
     "reason": "Not Found"
 }
 ```
-#### A wrong inputs
+#### A wrong input
 
 ```
 {
