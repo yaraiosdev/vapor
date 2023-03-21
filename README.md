@@ -27,7 +27,8 @@
     - [A wrong endpoint](#a-wrong-endpoint)
     - [A wrong input](#a-wrong-input)
     - [A collection of items](#a-collection-of-items)
-
+ 
+ - [ Developer Team ](#developer-team)
 
   
 ## Introduction
@@ -290,4 +291,11 @@ Just to round it all off, here’s a few examples of how our response will retur
     }
 ]
 ```
+## Developer Team 
+<br>
 
+[**@Duaa**](https://github.com/duaal)
+<br>
+[**@yara**](https://github.com/yaraiosdev)
+<br>
+[**@reema**](https://github.com/y-1996)
