@@ -29,9 +29,15 @@
     - [A collection of items](#a-collection-of-items)
 
 
+  
 ## Introduction
 This document will show our grading system API built using the Vapor web framework and Fluent ORM framework for Swift.
 We will show the Structure of this API and its endpoints and how exactly to use this API.
+<div align="center">
+
+![8c5be280-5bbd-11ea-83c7-7fb50300e4df ](https://user-images.githubusercontent.com/40645258/226743772-f9c99ff5-6451-4a65-8533-c5505c551627.png )
+
+  </div>
 
 # Structure
 ```
