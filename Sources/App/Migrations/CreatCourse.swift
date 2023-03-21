@@ -10,7 +10,7 @@ import Foundation
 import Fluent
 struct CreatCourse :Migration {
 func prepare(on database: FluentKit.Database) -> NIOCore.EventLoopFuture<Void> {
-return database.schema("courses")
+return database.schema("course")
 .id()
 .field("courseName",.string,.required)
 .field("instructor_id", .uuid, .required, .references("instructors", "id"))

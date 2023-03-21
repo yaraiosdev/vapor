@@ -15,8 +15,6 @@ final class student :Model , Content{
     var studentName : String
     @Children (for:\.$student_id)
     var gradeList:[grade]
-    
-
     init() {
         
     }

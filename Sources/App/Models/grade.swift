@@ -15,7 +15,7 @@ final class grade :Model , Content{
     var score : String
  @Parent(key: "course_id" )
    var course_id :course
-    @Parent(key: "student_id" )
+    @Parent(key:"student_id")
     var student_id : student
 
     init() {

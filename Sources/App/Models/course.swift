@@ -8,7 +8,7 @@
 import Fluent
 import Vapor
 final class course :Model , Content{
-    static let schema = "courses"
+    static let schema = "course"
     @ID (key: .id)
     var id :UUID?
     @Field(key : "courseName")
