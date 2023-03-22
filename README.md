@@ -40,8 +40,18 @@ We will show the Structure of this API and its endpoints and how exactly to use 
 
   </div>
 
+## App Statment
+ Create a grading system for the instructors to grade their students using vapor and PostgreSQL with entire CRUD operations
+ 
+ ## sloution concept
+ Create students grading system that help instructors so they can CRUD the students grades
+
 # Structure
+
+<img width="743" alt="Screenshot 1444-08-29 at 5 49 48 PM" src="https://user-images.githubusercontent.com/40645258/226917216-2f53e812-6e18-490d-a012-a405c6aa5f81.png">
+
 ```
+
 ├── Sources
 │   └── app
 │       ├── Controllers // Our API Controllers
